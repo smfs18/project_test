@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: antsys
+Version: 0.1.44
+Summary: AntSys - General Purpose Ant Colony Optimization System
+Home-page: https://github.com/alisonzille/antsys
+Author: Alison Zille Lopes
+Author-email: alisonzille@gmail.com
+License: GNU General Public License v3 (GPLv3)
+Keywords: ACO,optimization,ant
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Cin_Compesa_ACO
