@@ -181,34 +181,34 @@ def aco_cost(path):
 
     allControls = list()
 
-    bestControls_at_d16 = generate_controls(pressure_at_d16, wn, 10.0, 15.0)
+    bestControls_at_d16 = generate_controls(pressure_at_d16, wn, 10.0, 18.0)
     bestControls_at_d17A = search_pressure(
         pressure_at_d17A,
         bestControls_at_d16[3]["time"],
         wn,
-        10.0,
-        25.0,
+        17.0,
+        30.0,
     )
     bestControls_at_d17B = search_pressure(
         pressure_at_d17B,
         bestControls_at_d16[3]["time"],
         wn,
-        10.0,
-        25.0,
+        17.0,
+        30.0,
     )
     bestControls_at_d18 = search_pressure(
         pressure_at_d18,
         bestControls_at_d16[3]["time"],
         wn,
-        10.0,
-        18.0,
+        12.0,
+        24.0,
     )
     bestControls_at_d21 = search_pressure(
         pressure_at_d21,
         bestControls_at_d16[3]["time"],
         wn,
         10.0,
-        15.0,
+        18.0,
     )
 
     print("\033[m----------- [ best controls ] -----------")
