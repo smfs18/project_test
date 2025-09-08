@@ -240,4 +240,4 @@ new_world = AntWorld(nodes, aco_rules, aco_cost, aco_heuristic)
 
 ant_opt = AntSystem(world=new_world, n_ants=100)
 
-ant_opt.optimize(100, 20)
+ant_opt.optimize(200, 40)
