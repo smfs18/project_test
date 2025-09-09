@@ -212,48 +212,19 @@ def aco_cost(path):
         10.0,
         18.0,
     )
-    
-    # Print organizado - extraindo os dados corretos
-    print("\n" + "="*60)
-    print("\033[1;36m          CONFIGURAÇÕES DAS VÁLVULAS\033[m")
-    print("="*60)
-    
-    # Horário ótimo
-    best_time = bestControls_at_d16[3]["time"]
-    best_hour = int(best_time / 3600) if best_time > 0 else 0
-    print(f"\n\033[1;33mHorário Ótimo: {best_hour:02d}:00 (Tempo: {best_time}s)\033[m")
-    
-    print(f"\n\033[1;32mConfigurações das Válvulas:\033[m")
-    
-    # Extrair configurações das válvulas
-    if bestControls_at_d16[0] is not None:
-        action = bestControls_at_d16[0]['then_actions'][0]
-        setting = float(action.split('IS ')[1])
-        print(f"\033[34mVálvula 17: {setting:.2f}\033[m")
-    
-    if bestControls_at_d16[1] is not None:
-        action = bestControls_at_d16[1]['then_actions'][0] 
-        setting = float(action.split('IS ')[1])
-        print(f"\033[34mVálvula 18: {setting:.2f}\033[m")
-    
-    if bestControls_at_d16[2] is not None:
-        action = bestControls_at_d16[2]['then_actions'][0]
-        setting = float(action.split('IS ')[1]) 
-        print(f"\033[34mVálvula 20: {setting:.2f}\033[m")
-    
-    print("\n" + "="*60)
-    print("\033[1;36m          PRESSÕES NOS DISTRITOS\033[m")  
-    print("="*60)
-    
-    # Apenas as pressões de cada distrito
-    print(f"\n\033[32mDistrito D16: {bestControls_at_d16[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D17A: {bestControls_at_d17A[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D17B: {bestControls_at_d17B[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D18: {bestControls_at_d18[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D21: {bestControls_at_d21[3]['pressure']:.2f} bar\033[m")
-    
-    print("="*60)
-    
+
+    print("\033[m----------- [ best controls ] -----------")
+    print("\033[32m{}\033[m".format(bestControls_at_d16))
+    print("- - - - - - - - - - - - - - - - - - - - - - -")
+    print("\033[34m{}\033[m".format(bestControls_at_d17A))
+    print("- - - - - - - - - - - - - - - - - - - - - - -")
+    print("\033[34m{}\033[m".format(bestControls_at_d17B))
+    print("- - - - - - - - - - - - - - - - - - - - - - -")
+    print("\033[34m{}\033[m".format(bestControls_at_d18))
+    print("- - - - - - - - - - - - - - - - - - - - - - -")
+    print("\033[34m{}\033[m".format(bestControls_at_d21))
+    print("\033[m----------- [ best controls ] -----------")
+
     allControls.append(["D16", bestControls_at_d16])
     allControls.append(["D17A", bestControls_at_d17A])
     allControls.append(["D17B", bestControls_at_d17B])
