@@ -212,7 +212,7 @@ def aco_cost(path):
         10.0,
         18.0,
     )
-    # Impressão dos resultados.
+
     print("\033[m----------- [ best controls ] -----------")
     print("\033[32m{}\033[m".format(bestControls_at_d16))
     print("- - - - - - - - - - - - - - - - - - - - - - -")
@@ -224,6 +224,7 @@ def aco_cost(path):
     print("- - - - - - - - - - - - - - - - - - - - - - -")
     print("\033[34m{}\033[m".format(bestControls_at_d21))
     print("\033[m----------- [ best controls ] -----------")
+
     allControls.append(["D16", bestControls_at_d16])
     allControls.append(["D17A", bestControls_at_d17A])
     allControls.append(["D17B", bestControls_at_d17B])
