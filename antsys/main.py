@@ -246,11 +246,11 @@ def aco_cost(path):
     print("="*60)
     
     # Apenas as pressões de cada distrito
-    print(f"\n\033[32mDistrito D16: {bestControls_at_d16[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D17A: {bestControls_at_d17A[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D17B: {bestControls_at_d17B[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D18: {bestControls_at_d18[3]['pressure']:.2f} bar\033[m")
-    print(f"\033[34mDistrito D21: {bestControls_at_d21[3]['pressure']:.2f} bar\033[m")
+    print(f"\n\033[32mDistrito D16: {bestControls_at_d16[3]['pressure']:.2f} mca\033[m")
+    print(f"\033[34mDistrito D17A: {bestControls_at_d17A[3]['pressure']:.2f} mca\033[m")
+    print(f"\033[34mDistrito D17B: {bestControls_at_d17B[3]['pressure']:.2f} mca\033[m")
+    print(f"\033[34mDistrito D18: {bestControls_at_d18[3]['pressure']:.2f} mca\033[m")
+    print(f"\033[34mDistrito D21: {bestControls_at_d21[3]['pressure']:.2f} mca\033[m")
     
     print("="*60)
     
