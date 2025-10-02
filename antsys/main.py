@@ -253,6 +253,62 @@ def aco_cost(path):
     print(f"\033[34mDistrito D21: {bestControls_at_d21[3]['pressure']:.2f} mca\033[m")
     
     print("="*60)
+       # Pegando os valores de pressão calculados
+    p_d16 = bestControls_at_d16[3]["pressure"]
+    p_d17A = bestControls_at_d17A[3]["pressure"]
+    p_d17B = bestControls_at_d17B[3]["pressure"]
+    p_d18 = bestControls_at_d18[3]["pressure"]
+    p_d21 = bestControls_at_d21[3]["pressure"]
+
+    # Conta quantos distritos têm pressão > 0
+    distritos_positivos = sum([
+        p_d16 > 0,
+        p_d17A > 0,
+        p_d17B > 0,
+        p_d18 > 0,
+        p_d21 > 0
+    ])
+
+    # Só printa se pelo menos 3 distritos tiverem pressão > 0
+    if distritos_positivos >= 3:
+        print("\n" + "="*60)
+        print("\033[1;36m          CONFIGURAÇÕES DAS VÁLVULAS\033[m")
+        print("="*60)
+
+        # Horário ótimo
+        best_time = bestControls_at_d16[3]["time"]
+        best_hour = int(best_time / 3600) if best_time > 0 else 0
+        print(f"\n\033[1;33mHorário Ótimo: {best_hour:02d}:00 (Tempo: {best_time}s)\033[m")
+
+        print(f"\n\033[1;32mConfigurações das Válvulas:\033[m")
+
+        if bestControls_at_d16[0] is not None:
+            action = bestControls_at_d16[0]['then_actions'][0]
+            setting = float(action.split('IS ')[1])
+            print(f"\033[34mVálvula 17: {setting:.2f}\033[m")
+
+        if bestControls_at_d16[1] is not None:
+            action = bestControls_at_d16[1]['then_actions'][0]
+            setting = float(action.split('IS ')[1])
+            print(f"\033[34mVálvula 18: {setting:.2f}\033[m")
+
+        if bestControls_at_d16[2] is not None:
+            action = bestControls_at_d16[2]['then_actions'][0]
+            setting = float(action.split('IS ')[1])
+            print(f"\033[34mVálvula 20: {setting:.2f}\033[m")
+
+        print("\n" + "="*60)
+        print("\033[1;36m          PRESSÕES NOS DISTRITOS\033[m")
+        print("="*60)
+
+        print(f"\n\033[32mDistrito D16: {p_d16:.2f} mca\033[m")
+        print(f"\033[34mDistrito D17A: {p_d17A:.2f} mca\033[m")
+        print(f"\033[34mDistrito D17B: {p_d17B:.2f} mca\033[m")
+        print(f"\033[34mDistrito D18: {p_d18:.2f} mca\033[m")
+        print(f"\033[34mDistrito D21: {p_d21:.2f} mca\033[m")
+
+        print("="*60)
+
     
     allControls.append(["D16", bestControls_at_d16])
     allControls.append(["D17A", bestControls_at_d17A])
